@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Unity's generated WebGL loader — not our source, not meant to be linted.
+    "public/game/**",
   ]),
 ]);
 

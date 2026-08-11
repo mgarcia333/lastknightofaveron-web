@@ -92,7 +92,7 @@ export default function UnityGame() {
   }, []);
 
   return (
-    <div className="relative w-full aspect-video max-w-5xl bg-black rounded-lg overflow-hidden panel-border">
+    <div className="relative w-full aspect-video max-w-[1920px] bg-black overflow-hidden frame corner-marks">
       <canvas
         id="unity-canvas"
         tabIndex={-1}

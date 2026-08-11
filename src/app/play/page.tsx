@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import UnityGame from "@/components/UnityGame";
 
 export const metadata = {
@@ -20,8 +19,8 @@ const controls = [
 function KeyCap({ label }: { label: string }) {
   return (
     <span
-      className="inline-flex items-center justify-center min-w-[2.25rem] h-8 px-2 rounded-sm border border-[var(--gold)]/50 bg-black/50 text-[var(--gold)] text-xs tracking-wide shadow-[0_0_8px_rgba(201,169,97,0.15)]"
-      style={{ fontFamily: "var(--font-display)" }}
+      className="inline-flex items-center justify-center min-w-[2.25rem] h-8 px-2 border border-[var(--gold-dim)] text-[var(--gold)] text-xs tracking-wide"
+      style={{ fontFamily: "var(--font-heading)" }}
     >
       {label}
     </span>
@@ -30,36 +29,36 @@ function KeyCap({ label }: { label: string }) {
 
 export default function PlayPage() {
   return (
-    <div className="flex flex-col flex-1 px-6 py-8">
-      <header className="w-full flex items-center justify-between max-w-6xl mx-auto mb-4">
-        <Link
-          href="/"
-          className="text-sm tracking-widest text-accent"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
-          ← VOLVER
-        </Link>
+    <div className="flex flex-col flex-1 px-6 pt-28 pb-16">
+      <header className="fixed top-0 inset-x-0 z-20 border-b border-[var(--hairline)] bg-[var(--ink)]/80 backdrop-blur-sm">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+          <Link
+            href="/"
+            className="text-xs tracking-[0.3em] text-[var(--gold)]"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
+            ← AVERON
+          </Link>
+          <span
+            className="text-xs tracking-[0.3em] text-[color:var(--foreground-dim)] hidden sm:inline"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
+            EN JUEGO
+          </span>
+        </div>
       </header>
 
-      <div className="flex flex-col items-center text-center mb-8">
-        <div className="relative w-64 h-36 sm:w-80 sm:h-44 rounded-md overflow-hidden panel-border">
-          <Image
-            src="/images/titlecard.webp"
-            alt="The Last Knight of Averon"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
+      <div className="text-center mb-10">
+        <p className="eyebrow">The Last Knight of Averon</p>
       </div>
 
-      <main className="flex-1 flex flex-col lg:flex-row items-start justify-center gap-6 max-w-6xl mx-auto w-full">
+      <main className="flex-1 flex flex-col lg:flex-row items-start justify-center gap-8 max-w-[2200px] mx-auto w-full">
         <UnityGame />
 
-        <aside className="w-full lg:w-64 shrink-0 panel-border rounded-lg p-5 bg-[var(--panel)]/70">
+        <aside className="w-full lg:w-64 shrink-0 frame corner-marks p-6 bg-[var(--panel)]/60">
           <h2
-            className="text-[var(--gold)] text-base mb-4 tracking-widest"
-            style={{ fontFamily: "var(--font-display)" }}
+            className="text-[var(--gold)] text-sm mb-5 tracking-[0.3em]"
+            style={{ fontFamily: "var(--font-heading)" }}
           >
             CONTROLES
           </h2>
@@ -71,14 +70,16 @@ export default function PlayPage() {
                     <KeyCap key={k} label={k} />
                   ))}
                 </div>
-                <span className="text-xs text-white/60 text-right">{c.action}</span>
+                <span className="text-xs text-[color:var(--foreground-dim)] text-right">
+                  {c.action}
+                </span>
               </div>
             ))}
           </div>
         </aside>
       </main>
 
-      <p className="text-xs text-white/40 max-w-md text-center mx-auto mt-8">
+      <p className="text-xs text-[color:var(--foreground-dim)] max-w-md text-center mx-auto mt-10">
         El juego pesa varios MB, dale un momento a la carga la primera vez.
       </p>
     </div>
