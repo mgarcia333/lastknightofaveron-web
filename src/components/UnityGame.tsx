@@ -10,6 +10,7 @@ const LOADER_SRC = `${BUILD_URL}/${BUILD_NAME}.loader.js`;
 
 interface UnityInstance {
   Quit: () => Promise<void>;
+  SetFullscreen: (state: 0 | 1) => void;
 }
 
 declare global {
@@ -91,6 +92,10 @@ export default function UnityGame() {
     };
   }, []);
 
+  const handleFullscreen = () => {
+    instanceRef.current?.SetFullscreen(1);
+  };
+
   return (
     <div className="relative w-full aspect-video max-w-[1920px] bg-black overflow-hidden frame corner-marks">
       <canvas
@@ -102,6 +107,19 @@ export default function UnityGame() {
         className="w-full h-full block"
         style={{ visibility: ready ? "visible" : "hidden" }}
       />
+      {ready && (
+        <button
+          type="button"
+          onClick={handleFullscreen}
+          aria-label="Pantalla completa"
+          title="Pantalla completa (1920x1080)"
+          className="absolute top-3 right-3 flex items-center justify-center w-10 h-10 border border-[var(--gold)]/60 bg-black/60 text-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--ink)] transition-colors"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M8 3H4v4M16 3h4v4M8 21H4v-4M16 21h4v-4" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+      )}
       {!ready && !error && (
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-white/80">
           <span style={{ fontFamily: "var(--font-heading)" }} className="tracking-wide text-[var(--accent)]">
