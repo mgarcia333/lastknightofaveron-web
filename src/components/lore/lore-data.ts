@@ -9,6 +9,7 @@ export interface LoreEntry {
   icon: string;
   name: string;
   desc: string;
+  glow: string;
 }
 
 export const abilities: LoreEntry[] = [
@@ -16,21 +17,25 @@ export const abilities: LoreEntry[] = [
     icon: "/images/art/attack.png",
     name: "Espada",
     desc: "Golpe cuerpo a cuerpo. Encadena varios mandobles seguidos para abrir hueco entre la horda antes de que te rodee.",
+    glow: "rgba(179,18,47,0.35)",
   },
   {
     icon: "/images/art/fireball.png",
     name: "Bola de fuego",
     desc: "Consume maná para golpear a distancia. El pozo no es infinito — quémalo con cabeza, no con pánico.",
+    glow: "rgba(224,120,30,0.4)",
   },
   {
     icon: "/images/art/dash.png",
     name: "Esquiva",
     desc: "Un paso fuera del tiempo justo. Atraviesa el peligro un instante antes de que te alcance.",
+    glow: "rgba(201,169,97,0.35)",
   },
   {
     icon: "/images/art/jump.png",
     name: "Salto doble",
     desc: "El segundo impulso no viene de las piernas. Nadie te lo va a explicar mejor que eso.",
+    glow: "rgba(120,150,200,0.32)",
   },
 ];
 
@@ -39,36 +44,43 @@ export const bestiary: LoreEntry[] = [
     icon: "/images/art/skeleton.png",
     name: "Esqueleto",
     desc: "Centinelas de la vieja guardia de Averon. La carne se pudrió hace siglos; el puesto asignado, no.",
+    glow: "rgba(180,180,170,0.3)",
   },
   {
     icon: "/images/art/goblin.png",
     name: "Goblin",
     desc: "Carroñeros oportunistas que anidan en las grietas de la ciudad baja. Nunca vienen solos por mucho tiempo.",
+    glow: "rgba(90,160,60,0.35)",
   },
   {
     icon: "/images/art/mushroom.png",
     name: "Brote",
     desc: "Germinó de esporas que trajo la luna de sangre. Nadie ha bajado lo bastante hondo para ver qué más está creciendo ahí.",
+    glow: "rgba(70,190,90,0.35)",
   },
   {
     icon: "/images/art/flyingeye.png",
     name: "Ojo volador",
     desc: "Solo ojo, colmillo y ala. Vigila e informa — a algo que ni él mismo ha visto de cerca.",
+    glow: "rgba(60,140,150,0.35)",
   },
   {
     icon: "/images/art/heavybandit.png",
     name: "Bandido pesado",
     desc: "Lo que queda de la guardia real, todavía jurando lealtad a un rey que ya no está en el trono.",
+    glow: "rgba(70,100,160,0.32)",
   },
   {
     icon: "/images/art/lightbandit.png",
     name: "Bandido ligero",
     desc: "Saqueadores de las ruinas exteriores. Rápidos, temerarios, y casi siempre a solas por elección.",
+    glow: "rgba(180,140,80,0.32)",
   },
   {
     icon: "/images/art/medievalenemy.png",
     name: "Espadachín errante",
     desc: "Quedó atrapado en Averon la noche que cayó la ciudad. Sigue defendiendo una calle que ya no lleva a ningún sitio.",
+    glow: "rgba(179,18,47,0.3)",
   },
 ];
 
@@ -76,16 +88,19 @@ export const bosses: LoreEntry[] = [
   {
     icon: "/images/art/boss.png",
     name: "El Guardián del Umbral",
-    desc: "La primera prueba, a las puertas de Averon. Quien lo derrota aprende rápido que el título de \"último caballero\" se gana, no se hereda.",
+    desc: 'La primera prueba, a las puertas de Averon. Quien lo derrota aprende rápido que el título de "último caballero" se gana, no se hereda.',
+    glow: "rgba(120,60,180,0.35)",
   },
   {
     icon: "/images/art/boss.png",
     name: "El Guardián de la Superficie",
     desc: "Se alza entre las ruinas bajo cielo abierto, con la misma armadura que el guardián del umbral. ¿Es el mismo ser? Nadie que lo haya preguntado ha vuelto para responder.",
+    glow: "rgba(150,40,90,0.35)",
   },
   {
     icon: "/images/art/boss.png",
     name: "El Último Guardián",
     desc: "Lo que espera al final de Averon viste la armadura de todos los que cayeron antes que él. Quizás es memoria. Quizás es otra cosa que aprendió a parecerse a un caballero.",
+    glow: "rgba(179,18,47,0.42)",
   },
 ];

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import UnityGame from "@/components/UnityGame";
 import { GithubButton } from "@/components/GithubButton";
-import { LoreModal } from "@/components/lore/LoreModal";
 
 export const metadata = {
   title: "Jugar — The Last Knight of Averon",
@@ -44,7 +43,9 @@ export default function PlayPage() {
               ← AVERON
             </Link>
           </div>
-          <LoreModal />
+          <Link href="/historia" className="btn !py-2 !px-4 !text-xs">
+            Historia y arte
+          </Link>
         </div>
       </header>
 

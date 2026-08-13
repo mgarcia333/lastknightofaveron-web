@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { GithubButton } from "@/components/GithubButton";
-import { LoreModal } from "@/components/lore/LoreModal";
 
 const chapters = [
   {
@@ -36,7 +35,9 @@ export default function Home() {
             </span>
           </div>
           <div className="flex items-center gap-3">
-            <LoreModal />
+            <Link href="/historia" className="btn !py-2 !px-4 !text-xs">
+              Historia y arte
+            </Link>
             <Link href="/play" className="btn btn-solid !py-2 !px-5 !text-xs">
               Jugar
             </Link>
