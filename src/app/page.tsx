@@ -35,8 +35,9 @@ export default function Home() {
             </span>
           </div>
           <div className="flex items-center gap-3">
-            <Link href="/historia" className="btn !py-2 !px-4 !text-xs">
-              Historia y arte
+            <Link href="/historia" className="btn !py-2 !px-3 sm:!px-4 !text-xs">
+              <span className="hidden sm:inline">Historia y arte</span>
+              <span className="sm:hidden">Historia</span>
             </Link>
             <Link href="/play" className="btn btn-solid !py-2 !px-5 !text-xs">
               Jugar

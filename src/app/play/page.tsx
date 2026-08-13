@@ -43,8 +43,9 @@ export default function PlayPage() {
               ← AVERON
             </Link>
           </div>
-          <Link href="/historia" className="btn !py-2 !px-4 !text-xs">
-            Historia y arte
+          <Link href="/historia" className="btn !py-2 !px-3 sm:!px-4 !text-xs shrink-0">
+            <span className="hidden sm:inline">Historia y arte</span>
+            <span className="sm:hidden">Historia</span>
           </Link>
         </div>
       </header>

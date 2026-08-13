@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { GithubButton } from "@/components/GithubButton";
 import { PortraitCard } from "@/components/lore/PortraitCard";
-import { abilities, bestiary, bosses, storyParagraphs } from "@/components/lore/lore-data";
+import { abilities, bestiary, bosses, knightLore, storyParagraphs } from "@/components/lore/lore-data";
 
 export const metadata = {
   title: "Crónicas de Averon — The Last Knight of Averon",
@@ -50,7 +50,7 @@ export default function HistoriaPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)] via-[var(--background)]/40 to-black/30" />
         </div>
 
-        <div className="relative px-6 pb-14 pt-40 max-w-6xl mx-auto w-full">
+        <div className="relative px-6 pb-14 pt-28 sm:pt-40 max-w-6xl mx-auto w-full">
           <p className="eyebrow mb-4">Una visita guiada</p>
           <h1
             className="text-4xl sm:text-6xl text-[var(--foreground)] mb-4"
@@ -80,7 +80,7 @@ export default function HistoriaPage() {
         </div>
       </nav>
 
-      <section id="historia" className="scroll-mt-28 px-6 py-24">
+      <section id="historia" className="scroll-mt-28 px-6 py-16 sm:py-24">
         <div className="max-w-5xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-14 items-start">
           <div className="flex flex-col gap-5 story-text">
             <p className="eyebrow mb-1">I. Historia</p>
@@ -107,12 +107,12 @@ export default function HistoriaPage() {
         </div>
       </section>
 
-      <section id="caballero" className="scroll-mt-28 px-6 py-24 border-t border-[var(--hairline)]">
+      <section id="caballero" className="scroll-mt-28 px-6 py-16 sm:py-24 border-t border-[var(--hairline)]">
         <div className="max-w-6xl mx-auto">
           <p className="eyebrow mb-3">II. El Caballero</p>
           <hr className="rule mb-12" />
 
-          <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-start">
+          <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-12 items-start">
             <div
               className="relative aspect-[3/4] frame corner-marks flex items-center justify-center overflow-hidden"
               style={{ background: "radial-gradient(circle at 50% 40%, rgba(179,18,47,0.28), transparent 70%)" }}
@@ -127,16 +127,28 @@ export default function HistoriaPage() {
               />
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-4">
-              {abilities.map((a) => (
-                <PortraitCard key={a.name} entry={a} />
-              ))}
+            <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-4">
+                {knightLore.map((p, i) => (
+                  <p
+                    key={i}
+                    className="text-sm sm:text-base leading-relaxed text-[color:var(--foreground-dim)]"
+                  >
+                    {p}
+                  </p>
+                ))}
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {abilities.map((a) => (
+                  <PortraitCard key={a.name} entry={a} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="bestiario" className="scroll-mt-28 px-6 py-24 border-t border-[var(--hairline)]">
+      <section id="bestiario" className="scroll-mt-28 px-6 py-16 sm:py-24 border-t border-[var(--hairline)]">
         <div className="max-w-6xl mx-auto">
           <p className="eyebrow mb-3">III. Bestiario</p>
           <hr className="rule mb-12" />
@@ -148,11 +160,11 @@ export default function HistoriaPage() {
         </div>
       </section>
 
-      <section id="jefes" className="scroll-mt-28 px-6 py-24 border-t border-[var(--hairline)]">
+      <section id="jefes" className="scroll-mt-28 px-6 py-16 sm:py-24 border-t border-[var(--hairline)]">
         <div className="max-w-6xl mx-auto">
           <p className="eyebrow mb-3">IV. Guardianes</p>
           <hr className="rule mb-12" />
-          <div className="grid sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {bosses.map((b) => (
               <PortraitCard key={b.name} entry={b} size="lg" />
             ))}
