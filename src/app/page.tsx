@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { GithubButton } from "@/components/GithubButton";
+import { LoreModal } from "@/components/lore/LoreModal";
 
 const chapters = [
   {
@@ -23,16 +25,22 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <header className="fixed top-0 inset-x-0 z-20 border-b border-[var(--hairline)] bg-[var(--ink)]/70 backdrop-blur-sm">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <span
-            className="text-sm tracking-[0.4em] text-[var(--gold)]"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            AVERON
-          </span>
-          <Link href="/play" className="btn btn-solid !py-2 !px-5 !text-xs">
-            Jugar
-          </Link>
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <GithubButton />
+            <span
+              className="text-sm tracking-[0.4em] text-[var(--gold)]"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              AVERON
+            </span>
+          </div>
+          <div className="flex items-center gap-3">
+            <LoreModal />
+            <Link href="/play" className="btn btn-solid !py-2 !px-5 !text-xs">
+              Jugar
+            </Link>
+          </div>
         </div>
       </header>
 

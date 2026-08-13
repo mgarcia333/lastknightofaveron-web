@@ -1,5 +1,7 @@
 import Link from "next/link";
 import UnityGame from "@/components/UnityGame";
+import { GithubButton } from "@/components/GithubButton";
+import { LoreModal } from "@/components/lore/LoreModal";
 
 export const metadata = {
   title: "Jugar — The Last Knight of Averon",
@@ -31,20 +33,18 @@ export default function PlayPage() {
   return (
     <div className="flex flex-col flex-1 px-6 pt-28 pb-16">
       <header className="fixed top-0 inset-x-0 z-20 border-b border-[var(--hairline)] bg-[var(--ink)]/80 backdrop-blur-sm">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link
-            href="/"
-            className="text-xs tracking-[0.3em] text-[var(--gold)]"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            ← AVERON
-          </Link>
-          <span
-            className="text-xs tracking-[0.3em] text-[color:var(--foreground-dim)] hidden sm:inline"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            EN JUEGO
-          </span>
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <GithubButton />
+            <Link
+              href="/"
+              className="text-xs tracking-[0.3em] text-[var(--gold)]"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              ← AVERON
+            </Link>
+          </div>
+          <LoreModal />
         </div>
       </header>
 

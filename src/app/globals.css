@@ -44,16 +44,16 @@
 }
 
 * {
-  cursor: url("/images/cursor.png") 16 16, auto;
+  cursor: url("/images/cursor.png") 2 2, auto;
 }
 
 a,
 button {
-  cursor: url("/images/cursor.png") 16 16, pointer;
+  cursor: url("/images/cursor.png") 2 2, pointer;
 }
 
 #unity-canvas {
-  cursor: url("/images/cursor.png") 16 16, auto !important;
+  cursor: url("/images/cursor.png") 2 2, auto !important;
 }
 
 html {
@@ -185,4 +185,13 @@ body > * {
 .btn-solid:hover {
   background: var(--accent-soft);
   color: #fff;
+}
+
+.story-first::first-letter {
+  font-family: var(--font-display);
+  font-size: 3.4em;
+  float: left;
+  line-height: 0.8;
+  padding: 0.05em 0.08em 0 0;
+  color: var(--gold);
 }
